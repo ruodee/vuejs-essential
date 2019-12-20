@@ -9,10 +9,10 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a href="/" class="navbar-brand">
+        <router-link to="/" class="navbar-brand">
           <span class="title">{{ logo.title }}</span>
           <img :src="logo.src" :alt="logo.title">
-        </a>
+        </router-link>
       </div>
 
       <div id="top-navbar-collapse" :class="['collapse', 'navbar-collapse', { in: showCollapsedNav }]">
@@ -21,18 +21,23 @@
             <a href="#" @click="changeNavIndex(index)">{{ item }}</a>
           </li>
         </ul>
+        <div class="navbar-right">
+          <TheEntry></TheEntry>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import TheEntry from '@/components/layouts/TheEntry'
 export default {
   name: 'TheHeader',
+  components: {TheEntry},
   data() {
     return {
       logo: {
-        src: `${this.uploadsUrl}sites/ByvFbNlQYVwhvTyBgLdqitchoacDNznN.jpg`,
+        src: `${this.uploadsUrl}cropped-govcc-icon-3.png`,
         title: 'VuejsCaff'
       },
       navList: ['社区', '头条', '问答', '教程'],
@@ -41,7 +46,7 @@ export default {
     }
   },
   beforeCreate() {
-    this.uploadsUrl = 'https://cdn.learnku.com/uploads/'
+    this.uploadsUrl = 'http://www.govcc.cn/wp-content/uploads/2019/06/'
   },
   methods: {
     changeNavIndex(index) {
