@@ -52,6 +52,11 @@
           </div>
         </div>
       </div>
+      <div class="col">
+        <div class="row">
+           <div align="center">版权所有©2019张彬 仅作学习测试 | <a href="http://www.beian.miit.gov.cn/"> 备案号： 豫ICP备13016316-2号</a></div>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
